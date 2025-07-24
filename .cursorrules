@@ -1,0 +1,101 @@
+# AI Template Repository Context
+
+This repository is a Next.js template specifically designed for building AI applications that allow users to provide their own OpenRouter API keys. It serves as a starting point for developers who want to create AI-powered apps with a privacy-first approach and modern UI components.
+
+## Core Purpose & Philosophy
+
+- **User-Owned API Keys**: Users bring their own OpenRouter API keys, stored locally in browser localStorage
+- **Privacy-First**: No server-side storage of user API keys or data - the app merely forwards requests to OpenRouter
+- **Clean Template**: Provides a foundation with essential UI components and AI integration patterns
+- **Modern Stack**: Built on Next.js 15 with App Router, TypeScript, and Tailwind CSS
+
+## Architecture & Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4 with custom design tokens using oklch color space
+- **UI Components**: shadcn/ui "new-york" style with custom modifications
+- **AI Integration**: OpenRouter via OpenAI SDK
+- **State Management**: React hooks with localStorage for API key persistence
+
+## Key Components & Features
+
+### API Key Management (`app/SettingsModal.tsx`)
+- Secure local storage of OpenRouter API keys
+- Basic validation (keys should start with 'sk-')
+- Clear privacy messaging to users
+- Utility functions: `getStoredApiKey()`, `hasApiKey()`
+
+### AI Integration (`app/api/sample-ai-route/route.ts`)
+- Example API route demonstrating OpenRouter integration
+- Uses OpenAI SDK with OpenRouter base URL
+- Currently configured for google/gemini-2.5-flash model
+- Proper error handling and response formatting
+
+### UI Component Library
+- **Button**: Multiple variants (default, destructive, outline, secondary, ghost, link) and sizes
+- **Dialog**: Modal dialogs with proper accessibility
+- **Tooltip**: Hover tooltips for additional information
+- **HoverCard**: Rich hover cards with detailed content
+- **Carousel**: Image/content carousels with navigation
+
+### Design System
+- **Design Philosophy**: Brutalist aesthetic - prefer sharp, angular edges over rounded corners
+- **Color Scheme**: Custom oklch-based colors with light/dark mode support
+- **Typography**: Geist Sans and Geist Mono fonts
+- **Spacing**: Consistent spacing scale
+- **Radius**: Avoid rounded corners when possible - use sharp, geometric edges for brutalist aesthetic
+- **Focus States**: Accessible focus indicators with ring styling
+
+## Development Guidelines
+
+### Code Style
+- Use TypeScript for all new code
+- Prefer functional components with hooks
+- Use proper prop typing with interfaces
+- Add explanatory comments for complex logic
+- Avoid inline functions when possible (use top-level or arrow functions)
+
+### Component Patterns
+- Keep components focused and single-purpose
+- Use shadcn/ui components as base, extend when needed
+- Maintain consistent spacing and styling patterns
+- Follow the established file structure (components in `/components/ui/`)
+
+### API Integration
+- Always validate API keys before making requests
+- Handle errors gracefully with user-friendly messages
+- Use proper loading states during API calls
+- Never store API keys server-side
+
+### Styling
+- Use Tailwind CSS classes consistently
+- Leverage CSS custom properties for theming
+- Maintain the oklch color system for consistency
+- **Brutalist Design**: Prefer sharp, angular edges - avoid `rounded-*` classes when possible
+- Use `rounded-none` or no rounding classes to maintain geometric, stark aesthetic
+- Test both light and dark modes
+
+## File Structure
+- `/app/` - Next.js App Router files (pages, layouts, API routes)
+- `/components/ui/` - Reusable UI components (shadcn/ui based)
+- `/lib/` - Utility functions and configurations
+- `/public/` - Static assets
+
+## Dependencies
+- Core: Next.js, React, TypeScript
+- Styling: Tailwind CSS, class-variance-authority, clsx, tailwind-merge
+- UI: @radix-ui components, lucide-react icons
+- AI: OpenAI SDK for OpenRouter integration
+- Carousel: embla-carousel-react
+
+## Extension Guidelines
+
+When extending this template:
+1. Maintain the privacy-first approach - avoid server-side API key storage
+2. Follow the established component patterns and design system
+3. Add new UI components following shadcn/ui conventions
+4. **Embrace brutalist design** - use sharp edges, geometric shapes, and minimal rounded corners
+5. Test API integrations thoroughly with proper error handling
+6. Document new features and components appropriately
+7. Ensure accessibility standards are maintained 

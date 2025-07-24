@@ -70,7 +70,7 @@ export default function SettingsModal({ isOpen, onClose, onApiKeyChange }: Setti
           </DialogTitle>
         </DialogHeader>
 
-        <div className="mt-4 space-y-4">
+        <div className="space-y-4 p-4">
           <div>
             <label className="text-sm text-gray-600 block mb-2">
               Enter your OpenRouter API key:
